@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/1" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.TiendaController">
+
+    <center>
+        <HBox spacing="20">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <!-- TABLA PRODUCTOS -->
+            <VBox spacing="10">
+                <TableView fx:id="tablaProductos" prefWidth="350">
+                    <columns>
+                        <TableColumn fx:id="colNombre" text="Nombre" prefWidth="130"/>
+                        <TableColumn fx:id="colPrecio" text="Precio" prefWidth="100"/>
+                        <TableColumn fx:id="colStock" text="Stock" prefWidth="100"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <!-- LABEL CANTIDAD Y BOTON DE AGREGAR -->
+            <VBox spacing="10">
+                <Label text="Cantidad:"/>
+                <TextField fx:id="txtCantidad" prefWidth="100"/>
+                <Button text="Agregar" onAction="#agregarAlCarrito"/>
+            </VBox>
+
+            <!-- CARRITO -->
+            <VBox spacing="10">
+                <ListView fx:id="listCarrito" prefWidth="250" prefHeight="250"/>
+                <Button text="Confirmar compra" onAction="#confirmarCompra"/>
+            </VBox>
+
+        </HBox>
+    </center>
+
+</BorderPane>
